@@ -21,6 +21,7 @@ services:
   # MySQL Service
   mysql:
     image: mysql/mysql-server:8.0
+    working_dir: /root
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_ROOT_HOST: "%"
@@ -28,6 +29,8 @@ services:
     volumes:
       - ./.docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
       - ./mysqldata:/var/lib/mysql
+      - ./importar:/root
+      - ./importar/datos.csv:/var/lib/mysql-files/datos.csv
     healthcheck:
       test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
       interval: 5s

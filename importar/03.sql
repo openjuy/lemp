@@ -1,0 +1,2 @@
+USE argenyx;
+LOAD DATA INFILE '/var/lib/mysql-files/datos.csv' INTO TABLE genes FIELDS TERMINATED BY '\t' ENCLOSED BY '' LINES TERMINATED BY '\n' IGNORE 1 ROWS;
