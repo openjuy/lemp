@@ -1,2 +1,2 @@
 # lemp
-Entorno de desarrollo LEMP
+Docker para desarrollo web en un entorno local
